@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="zxx">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- color of address bar in mobile browser -->
+  <meta name="theme-color" content="#F5C332">
+  <!-- favicon  -->
+  <link rel="shortcut icon" href="{% static 'img/ui/logo.ico' %}" type="image/x-icon">
+  <!-- font awesome css -->
+  <link rel="stylesheet" href="{% static 'css/plugins/font-awesome.min.css' %}">
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="{% static 'css/plugins/bootstrap.min.css' %}">
+  <!-- swiper css -->
+  <link rel="stylesheet" href="{% static 'css/plugins/swiper.min.css' %}">
+  <!-- datepicker css -->
+  <link rel="stylesheet" href="{% static 'css/plugins/datepicker.css' %}">
+  <!-- mapbox css -->
+  <link href="{% static 'css/plugins/mapbox-style.css' %}" rel='stylesheet'>
+  <!-- fancybox css -->
+  <link rel="stylesheet" href="{% static 'css/plugins/fancybox.min.css' %}">
+  <!-- starbelly css -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- page title -->
+  <title>{% block title %} {% endblock title %}</title>
+</head>
+
+<body>
+    {% block content %}
+
+    {% endblock content %}
+    
+
+ <!-- footer -->
+ <footer>
+    <div class="container">
+      <div class="sb-footer-frame">
+        <a href="home-1.html" class="sb-logo-frame">
+          <!-- logo img -->
+          <img src="{% static 'img/ui/logo.svg' %}" alt="Starbelly">
+        </a>
+        <ul class="sb-social">
+          <li><a href="#."><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#."><i class="fab fa-instagram"></i></a></li>
+          <li><a href="#."><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="#."><i class="fab fa-youtube"></i></a></li>
+        </ul>
+        <div class="sb-copy">&copy; late 2021 Starbelly. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer end -->
+  <!-- jquery js -->
+  <script src="{% static 'js/plugins/jquery.min.js' %}"></script>
+  <!-- smooth scroll js -->
+  <script src="{% static 'js/plugins/smooth-scroll.js' %}"></script>
+  <!-- swup js -->
+  <script src="{% static 'js/plugins/swup.min.js' %}"></script>
+  <!-- swiper js -->
+  <script src="{% static 'js/plugins/swiper.min.js' %}"></script>
+  <!-- datepicker js -->
+  <script src="{% static 'js/plugins/datepicker.js' %}"></script>
+  <!-- isotope js -->
+  <script src="{% static 'js/plugins/isotope.js' %}"></script>
+  <!-- sticky -->
+  <script src="{% static 'js/plugins/sticky.js' %}"></script>
+  <!-- mapbox js -->
+  <script src="{% static 'js/plugins/mapbox.min.js' %}"></script>
+  <!-- fancybox js -->
+  <script src="{% static 'js/plugins/fancybox.min.js' %}"></script>
+  <!-- starbelly js -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
