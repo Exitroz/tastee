@@ -14,16 +14,23 @@ class User(AbstractUser):
     email = models.EmailField(unique=True, null=True)
     date_joined = models.DateTimeField(default=timezone.now)
     avatar = models.ImageField(null=True, default="avatar.svg")
-
+    
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
     
+ 
+class Ingredient(models.Model):
+    name = models.CharField(max_length=100) 
     
+    
+    def __str__(self):
+        return self.name
+      
 class Food(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField(null=True, blank=True)
+    ingredients = models.ManyToManyField(Ingredient)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(upload_to='images', null=True, blank=True)
     price = models.FloatField()
     available = models.BooleanField(default=True)
     
@@ -48,3 +55,5 @@ class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     items = models.ManyToManyField(OrderItem)
     ordered = models.BooleanField(default=False)
+    
+    

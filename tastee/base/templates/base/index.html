@@ -199,17 +199,27 @@
           </div>
           <div class="swiper-container sb-short-menu-slider-3i">
             <div class="swiper-wrapper">
+
+              {% for food in foods %}
               <div class="swiper-slide">
                 <a data-fancybox="menu" data-no-swup href="{% static 'img/menu/1.jpg' %}" class="sb-menu-item">
                   <div class="sb-cover-frame">
                     <img src="{% static 'img/menu/1.jpg' %}" alt="product">
                   </div>
+                </a>
+                <a href="{% url 'food-item' food.id %}">
                   <div class="sb-card-tp">
-                    <h3 class="sb-card-title">Chevrefrit au miel</h3>
-                    <div class="sb-price"><sub>$</sub> 14</div>
+                    <h3 class="sb-card-title">{{food.name}}</h3>
+                    <div class="sb-price">${{food.price}}</div>
                   </div>
+                </a>
                   <div class="sb-description">
-                    <p class="sb-text sb-mb-15"><span>tomatoes</span>, <span>nori</span>, <span>feta cheese</span>, <span>mushrooms</span>, <span>rice noodles</span>, <span>corn</span>, <span>shrimp</span>.</p>
+                    <p class="sb-text sb-mb-15">
+                      {% for item in food.ingredients.all %}
+                      <span>{{item}}</span>,
+                      {% endfor %}
+                    </p>
+                      
                     <ul class="sb-stars">
                       <li><i class="fas fa-star"></i></li>
                       <li><i class="fas fa-star"></i></li>
@@ -218,95 +228,10 @@
                       <li><i class="fas fa-star"></i></li>
                     </ul>
                   </div>
-                </a>
+                
               </div>
-              <div class="swiper-slide">
-                <a data-fancybox="menu" data-no-swup href="{% static 'img/menu/2.jpg' %}" class="sb-menu-item">
-                  <div class="sb-cover-frame">
-                    <img src="{% static 'img/menu/2.jpg' %}" alt="product">
-                    <div class="sb-badge sb-vegan"><i class="fas fa-leaf"></i> Vegan</div>
-                  </div>
-                  <div class="sb-card-tp">
-                    <h3 class="sb-card-title">Saumon Gravlax</h3>
-                    <div class="sb-price"><sub>$</sub> 9</div>
-                  </div>
-                  <div class="sb-description">
-                    <p class="sb-text sb-mb-15"><span>tomatoes</span>, <span>nori</span>, <span>feta cheese</span>, <span>mushrooms</span>, <span>rice noodles</span>, <span>corn</span>, <span>shrimp</span>.</p>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a data-fancybox="menu" data-no-swup href="{% static 'img/menu/3.jpg' %}" class="sb-menu-item">
-                  <div class="sb-cover-frame">
-                    <img src="{% static 'img/menu/3.jpg' %}" alt="product">
-                    <div class="sb-badge sb-hot"><i class="fas fa-pepper-hot"></i> Hot</div>
-                  </div>
-                  <div class="sb-card-tp">
-                    <h3 class="sb-card-title">Croustillant de poisson</h3>
-                    <div class="sb-price"><sub>$</sub> 4</div>
-                  </div>
-                  <div class="sb-description">
-                    <p class="sb-text sb-mb-15"><span>tomatoes</span>, <span>nori</span>, <span>feta cheese</span>, <span>mushrooms</span>, <span>rice noodles</span>, <span>corn</span>, <span>shrimp</span>.</p>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a data-fancybox="menu" data-no-swup href="{% static 'img/menu/4.jpg' %}" class="sb-menu-item">
-                  <div class="sb-cover-frame">
-                    <img src="{% static 'img/menu/4.jpg' %}" alt="product">
-                  </div>
-                  <div class="sb-card-tp">
-                    <h3 class="sb-card-title">Stracciatella</h3>
-                    <div class="sb-price"><sub>$</sub> 11</div>
-                  </div>
-                  <div class="sb-description">
-                    <p class="sb-text sb-mb-15"><span>tomatoes</span>, <span>nori</span>, <span>feta cheese</span>, <span>mushrooms</span>, <span>rice noodles</span>, <span>corn</span>, <span>shrimp</span>.</p>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a data-fancybox="menu" data-no-swup href="img/menu/5.jpg" class="sb-menu-item">
-                  <div class="sb-cover-frame">
-                    <img src="{% static 'img/menu/5.jpg' %}" alt="product">
-                    <div class="sb-badge sb-vegan"><i class="fas fa-leaf"></i> Vegan</div>
-                  </div>
-                  <div class="sb-card-tp">
-                    <h3 class="sb-card-title">Carpaccio de daurade</h3>
-                    <div class="sb-price"><sub>$</sub> 6</div>
-                  </div>
-                  <div class="sb-description">
-                    <p class="sb-text sb-mb-15"><span>tomatoes</span>, <span>nori</span>, <span>feta cheese</span>, <span>mushrooms</span>, <span>rice noodles</span>, <span>corn</span>, <span>shrimp</span>.</p>
-                    <ul class="sb-stars">
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                      <li><i class="fas fa-star"></i></li>
-                    </ul>
-                  </div>
-                </a>
-              </div>
+              {% endfor %}
+
             </div>
           </div>
         </div>
