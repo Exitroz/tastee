@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
+from django.conf import settings
 
 # Create your models here.
 CATEGORY_CHOICES = (
@@ -15,8 +16,8 @@ class User(AbstractUser):
     date_joined = models.DateTimeField(default=timezone.now)
     avatar = models.ImageField(null=True, default="avatar.svg")
     
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    # USERNAME_FIELD = 'email'
+    # REQUIRED_FIELDS = []
     
  
 class Ingredient(models.Model):
@@ -29,8 +30,9 @@ class Ingredient(models.Model):
 class Food(models.Model):
     name = models.CharField(max_length=100)
     ingredients = models.ManyToManyField(Ingredient)
+    description = models.TextField(max_length=255)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
-    image = models.ImageField(upload_to='images', null=True, blank=True)
+    image = models.ImageField(default='3.jpg', upload_to='food-images', null=True, blank=True)
     price = models.FloatField()
     available = models.BooleanField(default=True)
     
@@ -43,7 +45,7 @@ class Food(models.Model):
 
 
 class OrderItem(models.Model):
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     item = models.ForeignKey(Food, on_delete=models.CASCADE)
     ordered = models.BooleanField(default=False)
     quantity = models.IntegerField(default=1)

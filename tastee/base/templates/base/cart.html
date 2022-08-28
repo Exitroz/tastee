@@ -1,55 +1,14 @@
-<!DOCTYPE html>
-<html lang="zxx">
-
-
-<!-- Mirrored from elanta.app/nazar/starbelly-demo/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Aug 2022 22:48:45 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- color of address bar in mobile browser -->
-  <meta name="theme-color" content="#F5C332">
-  <!-- favicon  -->
-  <link rel="shortcut icon" href="img/ui/logo.ico" type="image/x-icon">
-  <!-- font awesome css -->
-  <link rel="stylesheet" href="css/plugins/font-awesome.min.css">
-  <!-- bootstrap css -->
-  <link rel="stylesheet" href="css/plugins/bootstrap.min.css">
-  <!-- swiper css -->
-  <link rel="stylesheet" href="css/plugins/swiper.min.css">
-  <!-- datepicker css -->
-  <link rel="stylesheet" href="css/plugins/datepicker.css">
-  <!-- mapbox css -->
-  <link href="css/plugins/mapbox-style.css" rel='stylesheet'>
-  <!-- fancybox css -->
-  <link rel="stylesheet" href="css/plugins/fancybox.min.css">
-  <!-- starbelly css -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- page title -->
-  <title>Starbelly</title>
-</head>
-
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {% endblock title %}
+{% block content %}
   <!-- app wrapper -->
   <div class="sb-app">
-    <!-- preloader -->
-    <div class="sb-preloader">
-      <div class="sb-preloader-bg"></div>
-      <div class="sb-preloader-body">
-        <div class="sb-loading">
-          <div class="sb-percent"><span class="sb-preloader-number" data-count="101">00</span><span>%</span></div>
-        </div>
-        <div class="sb-loading-bar">
-          <div class="sb-bar"></div>
-        </div>
-      </div>
-    </div>
-    <!-- preloader end -->
+    
     <!-- click effect -->
     <div class="sb-click-effect"></div>
     <!-- loader -->
-    <div class="sb-load"></div>
+   
     <!-- top bar -->
     <div class="sb-top-bar-frame">
       <div class="sb-top-bar-bg"></div>
@@ -459,56 +418,4 @@
         </div>
       </section>
       <!-- cart end -->
-
-      <!-- footer -->
-      <footer>
-        <div class="container">
-          <div class="sb-footer-frame">
-            <a href="home-1.html" class="sb-logo-frame">
-              <!-- logo img -->
-              <img src="img/ui/logo.svg" alt="Starbelly">
-            </a>
-            <ul class="sb-social">
-              <li><a href="#."><i class="fab fa-twitter"></i></a></li>
-              <li><a href="#."><i class="fab fa-instagram"></i></a></li>
-              <li><a href="#."><i class="fab fa-facebook-f"></i></a></li>
-              <li><a href="#."><i class="fab fa-youtube"></i></a></li>
-            </ul>
-            <div class="sb-copy">&copy; late 2021 Starbelly. All Rights Reserved.</div>
-          </div>
-        </div>
-      </footer>
-      <!-- footer end -->
-
-    </div>
-    <!-- dynamic content end -->
-
-  </div>
-  <!-- app wrapper end -->
-
-  <!-- jquery js -->
-  <script src="js/plugins/jquery.min.js"></script>
-  <!-- smooth scroll js -->
-  <script src="js/plugins/smooth-scroll.js"></script>
-  <!-- swup js -->
-  <script src="js/plugins/swup.min.js"></script>
-  <!-- swiper js -->
-  <script src="js/plugins/swiper.min.js"></script>
-  <!-- datepicker js -->
-  <script src="js/plugins/datepicker.js"></script>
-  <!-- isotope js -->
-  <script src="js/plugins/isotope.js"></script>
-  <!-- sticky -->
-  <script src="js/plugins/sticky.js"></script>
-  <!-- mapbox js -->
-  <script src="js/plugins/mapbox.min.js"></script>
-  <!-- fancybox js -->
-  <script src="js/plugins/fancybox.min.js"></script>
-  <!-- starbelly js -->
-  <script src="js/main.js"></script>
-
-</body>
-
-
-<!-- Mirrored from elanta.app/nazar/starbelly-demo/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 20 Aug 2022 22:48:45 GMT -->
-</html>
+{% endblock content %}

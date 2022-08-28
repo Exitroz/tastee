@@ -10,7 +10,7 @@
     <!-- click effect -->
     <div class="sb-click-effect"></div>
     <!-- loader -->
-    <div class="sb-load"></div>
+    
 
     {% include "navbar.html" %}
 
@@ -204,7 +204,9 @@
               <div class="swiper-slide">
                 <a data-fancybox="menu" data-no-swup href="{% static 'img/menu/1.jpg' %}" class="sb-menu-item">
                   <div class="sb-cover-frame">
-                    <img src="{% static 'img/menu/1.jpg' %}" alt="product">
+                    {% if food.image %}
+                    <img src="{{ food.image.url }}" alt="product">
+                    {% endif %}
                   </div>
                 </a>
                 <a href="{% url 'food-item' food.id %}">
